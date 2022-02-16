@@ -1,16 +1,10 @@
 <template>
-  <q-btn :to="link">
-    <q-item-section
-      v-if="icon"
-      avatar
-    >
-      <q-icon :name="icon" />
-    </q-item-section>
-
-    <q-item-section>
-      <q-item-label>{{ title }}</q-item-label>
-    </q-item-section>
-  </q-btn>
+  <q-item :to='link' v-ripple color="primary">
+    <q-icon left size="16px" :name='`svguse:icons/allIcons.svg#${icon}`' />
+    <q-toolbar-title>
+      {{title}}
+    </q-toolbar-title>
+  </q-item>
 </template>
 
 <script>
