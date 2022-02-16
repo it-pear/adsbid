@@ -1,7 +1,14 @@
 <template>
-  <div>Компоненты</div>
-  <div>
-    <q-select v-model="model" :options="options" label="Standard" />
+  <div style="padding: 10px">
+    <div>Компоненты</div>
+    <div>
+      <q-select
+        v-model="model"
+        :options="options"
+        dropdown-icon="keyboard_arrow_down"
+        label="Placeholder"
+      />
+    </div>
   </div>
 </template>
 
@@ -12,7 +19,7 @@ export default {
   setup() {
     return {
       model: ref(null),
-      options: ["Google", "Facebook", "Twitter", "Apple", "Oracle"],
+      options: ["Google", "Facebook", "Twitter", "Apple", "Oracle", "Google", "Facebook", "Twitter", "Apple", "Oracle"],
     };
   },
 };
