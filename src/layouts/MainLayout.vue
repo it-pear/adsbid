@@ -24,8 +24,9 @@
         />
       </q-list>
     </q-drawer>
- 
+
     <q-page-container>
+      <router-link to="/components">Страница компонентов</router-link>
       <router-view />
     </q-page-container>
   </q-layout>
