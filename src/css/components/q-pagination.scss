@@ -1,0 +1,38 @@
+.q-pagination {
+  .q-btn {
+    border: 1px solid $border-gray;
+  }
+  & > .row {
+    .q-btn {
+      margin: 0 2px;
+      padding: 0;
+      width: 32px;
+      height: 32px;
+      .block {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        color: #8893A5;
+      }
+    }
+    .q-btn--actionable:before {
+      box-shadow: none;
+    }
+    .bg-primary {
+      .block {
+        color: white;
+      }
+    }
+  }
+  & > .q-btn {
+    &:first-child {
+      margin-right: 46px;
+    }
+    &:last-child {
+      margin-left: 46px;
+    }
+    .q-icon {
+      color: #DBDFE4;
+    }
+  }
+}
