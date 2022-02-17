@@ -36,6 +36,7 @@
             dropdown-icon="svguse:icons/allIcons.svg#arow-dropdawn"
             class="q-header-info__dropdawn"
             content-class="q-header-info__dropdawn__inside"
+            size="14px"
           >
             <q-list>
               <q-item
@@ -126,9 +127,8 @@
         </q-item>
       </q-list>
     </q-drawer>
-
+ 
     <q-page-container>
-      <router-link to="/components">Страница компонентов</router-link>
       <router-view />
     </q-page-container>
   </q-layout>
