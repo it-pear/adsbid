@@ -50,7 +50,7 @@
 
         <div class="row">
           <q-space />
-          <q-btn label="Отмена" no-caps flat color="grey" v-close-popup />
+          <q-btn label="Отмена" no-caps flat color="dm-grey " v-close-popup />
           <q-btn
             class="q-btn__bold"
             label="Удалить"

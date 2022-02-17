@@ -1,7 +1,16 @@
 // app global css in SCSS form
+@import 'quasar.variables' ;
+.q-icon > svg,
+.q-icon > img {
+  width: auto;
+  height: auto;
+}
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
+body {
+  font-family: 'Montserrat';
+}
 @import 'layouts/mainLayout';
+
 
 // components
 @import 'components/q-select.scss';
@@ -9,3 +18,10 @@
 @import 'components/q-dialog.scss';
 @import 'components/q-card.scss';
 @import 'components/q-datepicker.scss';
+
+.q-menu {
+  box-shadow: 0px 0px 24px rgba(18, 40, 76, 0.08);
+  border-radius: 4px;
+}
+ 
+
