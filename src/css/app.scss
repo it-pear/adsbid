@@ -18,10 +18,19 @@ body {
 @import 'components/q-dialog.scss';
 @import 'components/q-card.scss';
 @import 'components/q-datepicker.scss';
+@import 'components/q-pagination';
+
+// pages
+@import 'pages/home.scss';
 
 .q-menu {
   box-shadow: 0px 0px 24px rgba(18, 40, 76, 0.08);
   border-radius: 4px;
+}
+
+// q-page
+.q-page {
+  padding: 40px;
 }
  
 

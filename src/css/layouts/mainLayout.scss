@@ -126,6 +126,7 @@ $layoutsize: 240px !important;
   }
   .q-drawer--left {
     width: $layoutsize;
+    position: fixed;
   }
   .q-header .q-layout__shadow {
     bottom: -24px;
