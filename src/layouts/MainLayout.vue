@@ -151,7 +151,7 @@ const linksList = [
   {
     title: 'Кампании',
     icon: 'company',
-    link: ''
+    link: '/compaings'
   },
   {
     title: 'Объявления',
