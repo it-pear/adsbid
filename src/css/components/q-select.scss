@@ -1,0 +1,85 @@
+.q-field {
+  border: 1px solid #a0a9b7;
+  border-radius: 4px;
+  height: auto;
+  width: 280px;
+  overflow: hidden;
+  transition: all 0.3s;
+
+  &:hover {
+    border: 1px solid #000000;
+  }
+
+  &__control {
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 0px;
+    background-color: transparent;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  &__control-container {
+    padding-top: 0 !important;
+  }
+
+  &__native {
+    padding: 11px 16px 11px 16px !important;
+    padding-top: 11px !important;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.1px;
+    color: #12284c;
+  }
+
+  &__marginal {
+    height: 38px;
+    background: #ffffff;
+    z-index: 1;
+  }
+
+  .q-select__dropdown-icon {
+    font-size: 24px;
+    margin: 0px 7px 0px 0px;
+    color: #4690ff;
+  }
+
+  &__label {
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0;
+    top: 10px;
+    left: 15px;
+    color: #596982 !important;
+  }
+
+  &--float {
+    .q-field__label {
+      display: none;
+    }
+  }
+
+  &--filled .q-field__control {
+    background-color: #ffffff;
+  }
+
+  &--focused {
+    border: 1px solid #4690ff !important;
+  }
+}
+
+.q-item {
+  min-height: 0;
+  padding: 12px 16px;
+}
+
+body.desktop .q-focus-helper {
+  background-color: #f5f5f5;
+}
+
+.q-field--standard.q-field--highlighted .q-field__control:after {
+  display: none;
+}
