@@ -1,7 +1,7 @@
 .q-field {
   border: 1px solid #a0a9b7;
   border-radius: 4px;
-  height: 40px;
+  height: auto;
   width: 280px;
   overflow: hidden;
   transition: all 0.3s;
@@ -11,7 +11,7 @@
   }
 
   &__control {
-    height: 40px !important;
+    height: auto !important;
     min-height: 0 !important;
     padding: 0px;
     background-color: transparent;
@@ -35,9 +35,15 @@
     color: #12284c;
   }
 
+  &__marginal {
+    height: 38px;
+    background: #ffffff;
+    z-index: 1;
+  }
+
   .q-select__dropdown-icon {
     font-size: 24px;
-    margin: -18px 7px 0px 0px;
+    margin: 0px 7px 0px 0px;
     color: #4690ff;
   }
 
@@ -72,4 +78,8 @@
 
 body.desktop .q-focus-helper {
   background-color: #f5f5f5;
+}
+
+.q-field--standard.q-field--highlighted .q-field__control:after {
+  display: none;
 }
