@@ -1,0 +1,42 @@
+.checkbox {
+  .q-checkbox__bg {
+    border: 2px solid #12284c;
+  }
+
+  &[aria-checked="true"] {
+    .q-checkbox__bg {
+      &::before {
+        content:'';
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        top: -2px;
+        right: -2px;
+        background: #fff;
+        z-index: 10;
+      }
+    }
+  }
+
+  .q-checkbox--dense .q-checkbox__inner {
+    width: 15px;
+    min-width: 0;
+    height: 15px;
+  }
+
+  .q-checkbox__inner--truthy .q-checkbox__bg,
+  .q-checkbox__inner--indet .q-checkbox__bg {
+    background: transparent;
+  }
+
+  .q-checkbox__svg {
+    color: #12284c;
+    top: -3px;
+    left: 2px;
+    z-index: 20;
+  }
+}
+
+body.desktop .q-checkbox:not(.disabled).checkbox .q-checkbox__inner:before {
+  display: none;
+}
