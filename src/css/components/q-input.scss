@@ -1,0 +1,26 @@
+.q-input.q-field--focused {
+  border-color: #273B5B !important;
+}
+.q-input {
+  .q-field__control {
+    padding: 0 16px;
+    padding-right: 0;
+    height: 40px !important;
+  }
+  input {
+    font-size: 16px;
+    line-height: 20px;
+    color: $dark;
+    font-weight: 400;
+    &::placeholder {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+      color: #8893A5;
+    }
+  }
+  .q-field__prepend {
+    padding-right: 0 !important;
+    min-height: 40px;
+  }
+}

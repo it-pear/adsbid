@@ -141,7 +141,7 @@ const linksList = [
   {
     title: 'Главная',
     icon: 'home',
-    link: '/'
+    link: '/home'
   },
   {
     title: 'Статистика',
@@ -151,22 +151,22 @@ const linksList = [
   {
     title: 'Кампании',
     icon: 'company',
-    link: '/home'
+    link: '/compaings'
   },
   {
     title: 'Объявления',
     icon: 'ads',
-    link: '/home'
+    link: ''
   },
   {
     title: 'Баланс',
     icon: 'balance',
-    link: '/home'
+    link: ''
   },
   {
     title: 'FAQ',
     icon: 'faq',
-    link: '/home'
+    link: ''
   }
 ];
 
