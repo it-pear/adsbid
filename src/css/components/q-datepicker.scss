@@ -30,6 +30,8 @@
   }
 
   .q-date__navigation {
+    height: 17px;
+
     max-width: 230px;
     margin: 0 auto;
 
@@ -49,6 +51,10 @@
       color: #12284c;
       opacity: 1;
     }
+  }
+
+  .q-date__calendar-days-container.overflow-hidden {
+    overflow: visible !important;
   }
 
   .q-date__range:before,
