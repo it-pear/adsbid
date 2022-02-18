@@ -1,3 +1,23 @@
+.dropdown-datepicker {
+  height: 40px;
+  min-height: 40px;
+  padding: 0px 16px;
+  &:before {
+    border-color: $border-gray-2;
+  }
+  .q-btn-dropdown__arrow {
+    display: none;
+  }
+  .q-icon {
+    color: $dark;
+    font-size: 16px;
+    margin-right: 19px;
+  }
+  .block {
+    font-size: 14px;
+  }
+}
+
 .datepicker {
   padding: 24px;
   color: #596982;

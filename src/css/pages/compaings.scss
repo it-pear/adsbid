@@ -1,8 +1,19 @@
 .q-page.compaings {
   .head {
+    display: flex;
+    flex-wrap: wrap;
+    .dropdown-datepicker {
+      margin-top: 40px;
+    }
     .head-filter {
+      margin-left: auto;
       .q-input {
         min-width: 363px;
+        margin-right: 16px;
+      }
+      .q-input,
+      .q-btn {
+        margin-top: 40px;
       }
     }
   }
