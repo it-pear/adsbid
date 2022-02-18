@@ -125,6 +125,18 @@
         </q-icon>
       </template>
     </q-input>
+
+    <br />
+
+    <q-checkbox class="checkbox" v-model="val" label="Дата" dense />
+
+    <br />
+    <br />
+
+    <q-tabs v-model="tab" class="tabs" no-caps>
+      <q-tab class="tab" name="mails" label="Mails" />
+      <q-tab class="tab" name="alarms" label="Alarms" />
+    </q-tabs>
   </div>
 </template>
 
@@ -160,6 +172,8 @@ export default {
         "Oracle12",
       ],
       dialog: ref(null),
+      val: ref(true),
+      tab: ref('mails')
     };
   },
 };
