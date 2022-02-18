@@ -13,6 +13,13 @@ body {
 
 
 // components
+@import 'components/q-select.scss';
+@import 'components/q-btn.scss';
+@import 'components/q-dialog.scss';
+@import 'components/q-card.scss';
+@import 'components/q-datepicker.scss';
+@import 'components/q-checkbox.scss';
+@import 'components/q-tabs.scss';
 @import 'components/q-select';
 @import 'components/q-btn';
 @import 'components/q-dialog';
@@ -34,7 +41,7 @@ body {
 .q-page {
   padding: 40px;
 }
- 
+
 
 // components
 .pt-0 {
