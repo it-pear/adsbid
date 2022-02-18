@@ -50,7 +50,7 @@
 
         <div class="row">
           <q-space />
-          <q-btn label="Отмена" no-caps flat color="dm-grey " v-close-popup />
+          <q-btn label="Отмена" no-caps flat color="dm-grey" v-close-popup />
           <q-btn
             class="q-btn__bold"
             label="Удалить"
@@ -62,20 +62,65 @@
       </q-card>
     </q-dialog>
 
-    <q-input filled v-model="date" mask="date" :rules="['date']">
-      <template v-slot:append>
-        <q-icon name="event" class="cursor-pointer">
-          <q-popup-proxy
-            ref="qDateProxy"
-            cover
-            transition-show="scale"
-            transition-hide="scale"
-          >
-            <q-date v-model="date" range>
-              <div class="row items-center justify-end">
-                <q-btn v-close-popup label="Close" color="primary" flat />
-              </div>
-            </q-date>
+    <q-input filled v-model="date">
+      <template v-slot:prepend>
+        <q-icon
+          size="16px"
+          name="svguse:icons/allIcons.svg#calendar"
+          class="cursor-pointer"
+        >
+          <q-popup-proxy cover transition-show="scale" transition-hide="scale">
+            <q-card class="row datepicker">
+              <q-list dense bordered padding class="rounded-borders">
+                <q-item>
+                  <q-item-section>Сегодня</q-item-section>
+                </q-item>
+
+                <q-item>
+                  <q-item-section>Вчера</q-item-section>
+                </q-item>
+
+                <q-item>
+                  <q-item-section>Позавчера</q-item-section>
+                </q-item>
+
+                <q-item class="q-item--active">
+                  <q-item-section>Текущая неделя</q-item-section>
+                </q-item>
+
+                <q-item>
+                  <q-item-section>Прошлая неделя</q-item-section>
+                </q-item>
+
+                <q-item>
+                  <q-item-section>Текущий месяц</q-item-section>
+                </q-item>
+
+                <q-item>
+                  <q-item-section>Прошлый месяц</q-item-section>
+                </q-item>
+
+                <q-item>
+                  <q-item-section>- 7 дней</q-item-section>
+                </q-item>
+
+                <q-item>
+                  <q-item-section>- 30 дней</q-item-section>
+                </q-item>
+
+                <q-item>
+                  <q-item-section>- 90 дней</q-item-section>
+                </q-item>
+              </q-list>
+
+              <q-date
+                v-model="date"
+                minimal
+                range
+                mask="DD.MM.YYYY - DD.MM.YYYY"
+              >
+              </q-date>
+            </q-card>
           </q-popup-proxy>
         </q-icon>
       </template>
@@ -91,7 +136,7 @@ export default {
     return {
       single: ref(null),
       multiple: ref(null),
-      date: ref({ from: '2022/07/08', to: '2022/07/17' }),
+      date: ref("19.10.2022 - 27.10.2022"),
       options: [
         "Google",
         "Facebook",
