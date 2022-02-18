@@ -13,15 +13,33 @@ body {
 
 
 // components
-@import 'components/q-select.scss';
-@import 'components/q-btn.scss';
-@import 'components/q-dialog.scss';
-@import 'components/q-card.scss';
-@import 'components/q-datepicker.scss';
+@import 'components/q-select';
+@import 'components/q-btn';
+@import 'components/q-dialog';
+@import 'components/q-card';
+@import 'components/q-datepicker';
+@import 'components/q-pagination';
+@import 'components/q-input';
+
+// pages
+@import 'pages/home';
+@import 'pages/compaings';
 
 .q-menu {
   box-shadow: 0px 0px 24px rgba(18, 40, 76, 0.08);
   border-radius: 4px;
 }
+
+// q-page
+.q-page {
+  padding: 40px;
+}
  
 
+// components
+.pt-0 {
+  padding-top: 0;
+}
+.q-field__control:after {
+  border: none !important;
+}
