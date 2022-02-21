@@ -29,6 +29,7 @@
       display: flex;
       .q-field {
         margin-top: 32px;
+        min-width: 280px;
         &:first-child {
           margin-right: 8px;
         }
@@ -80,6 +81,98 @@
   }
   
   .sidebar {
-    flex: 0 0 529px;
+    flex: 0 0 512px;
+    max-width: 512px;
+    .sidebar__title {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 29px;
+      color: #1D2A47;
+    }
+    .head {
+      .sidebar__title,
+      .q-field,
+      .tabs {
+        margin-top: 16px;
+      }
+    }
+    .geo {
+      padding-right: 16px;
+      padding-left: 16px;
+      padding-bottom: 32px;
+      margin-bottom: 40px;
+    }
+    .transit {
+      padding-right: 16px;
+      padding-left: 16px;
+      padding-bottom: 16px;
+      img {
+        margin-top: 24px;
+      }
+    }
+  }
+  .q-table-home {
+    box-shadow: none;
+    .q-table {
+      margin-top: 22px;
+      thead {
+        tr {
+          height: auto;
+          th {
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 22px;
+            color: #8893A5;
+            border-bottom-width: 0;
+            padding-bottom: 10px;
+            &:first-child {
+              padding-left: 0 !important;
+            }
+          }
+        }
+      }
+      tbody {
+        tr {
+          td {
+            height: auto !important;
+            padding: 6px 16px;
+            &:first-child {
+              padding-left: 0 !important;
+            }
+          }
+        }
+      }
+    }
+    .q-table__country,
+    .q-table__clicks {
+      display: flex;
+    }
+    .q-table__country {
+      display: flex;
+      align-items: center;
+      .q-table__country-reduction {
+        text-transform: uppercase;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+      .q-table__country-reduction,
+      .q-table__country-title {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        color: #1B2949;
+      }
+      .q-table__country-title {
+        min-width: 194px;
+      }
+    }
+    .q-table__clicks {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 29px;
+      background: -webkit-linear-gradient(#9966E0, #4690FF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
 }
