@@ -1,0 +1,19 @@
+.dropdown-option {
+  &:before {
+    border-color: #E0E0E0;
+  }
+  &:hover {
+    &:before {
+      border-color: $dark;
+    }
+  }
+  .q-btn__content {
+    span.q-icon {
+      font-size: 15px;
+    }
+    .q-btn-dropdown__arrow {
+      color: $primary;
+      font-size: 1.515em;
+    }
+  }
+}

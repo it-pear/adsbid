@@ -1,0 +1,36 @@
+.q-page.ads {
+  .head {
+    display: flex;
+    justify-content: flex-end;
+    .q-input,
+    .q-btn {
+      margin-top: 40px;
+    }
+    .q-input {
+      min-width: 363px;
+      margin-right: 16px;
+    }
+  }
+  .q-tabs-main {
+    .q-tabs__content {
+      justify-content: flex-start;
+    }
+  }
+  .filter {
+    margin-top: 24px;
+    display: flex;
+    .q-select-sec {
+      margin-left: 16px;
+      label {
+        margin-right: 8px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        color: $dark;
+      }
+    }
+    .dropdown-datepicker {
+      margin-left: auto;
+    }
+  }
+}
