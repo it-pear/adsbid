@@ -1,4 +1,33 @@
 <template>
+  <q-dialog v-model="dialog" class="compaings-dialog-del">
+    <q-card>
+      <div class="row">
+        <div class="q-dialog__title">
+          Вы уверены, что хотите удалить кампанию?
+        </div>
+        <q-icon
+          class="q-dialog__close"
+          size="18px"
+          name="svguse:icons/allIcons.svg#close"
+          flat
+          v-close-popup
+        />
+      </div>
+
+      <div class="row">
+        <q-space />
+        <q-btn label="Отмена" no-caps flat color="dm-grey" v-close-popup />
+        <q-btn
+          class="q-btn__bold"
+          label="Удалить"
+          no-caps
+          unelevated
+          color="primary"
+         @click="triggerPositive('top-right')"
+        />
+      </div>
+    </q-card>
+  </q-dialog>
   <q-page class="compaings pt-0">
     <!-- icon="mail" q-btn-dropdown__arrow -->
     <div class="head">
@@ -76,6 +105,11 @@
         <q-btn color="primary" no-caps unelevated icon="add" label="Создать кампанию" />
       </div>
     </div>
+    <null-date
+      v-if="nulldate"
+      title='Список кампаний пока пуст'
+      text='У вас еще не создано ни одной кампании. Для начала работы в кабинете рекламодателя создайте рекламную кампанию и добавьте объявления.'
+    />
     <q-table
       hide-pagination
       row-key="id"
@@ -84,6 +118,7 @@
       :rows="rows"
       :columns="columns"
       class="q-table-main"
+      v-if="!nulldate"
     >
       <template v-slot:header-cell="props">
         <q-th :props="props">
@@ -95,7 +130,7 @@
       </template>
 
       <template v-slot:body-cell-id="props">
-        <q-td :props="props" :class="{ 'q-td-warning': props.row.limit > 0 }">
+        <q-td :props="props" :class="{ 'q-td-warning': true }">
           {{props.row.id}}
         </q-td>
       </template>  
@@ -165,6 +200,7 @@
               no-caps
               outline
               dense
+              @click="dialog = true"
             >
               <q-tooltip anchor="top middle" self="bottom middle" class="top-tooltip">
                 <div>
@@ -228,17 +264,13 @@
           </div>
         </q-td>
       </template>  
-          
-      <!-- <template v-slot:body-cell-spent="props">
-        <q-td :props="props">
-          <p>
-            {{props.row.spent}} ₽<br/>
-          </p>
-          <div class="warning-limits" v-if="props.row.limit > 0">Из {{props.row.limit}} ₽</div>
-          <p v-else class="disabled">Без лимита</p>
-        </q-td>
-      </template> -->
     </q-table>
+    <q-pagination
+      v-model="current"
+      :max="5"
+      direction-links
+      v-if="!nulldate"
+    />
   </q-page>
 </template>
 
@@ -262,14 +294,6 @@ const columns = [
   { name: 'ctr', align: 'left', label: 'CTR, %', field: 'iron', sortable: true},
   { name: 'consumption', align: 'left', label: 'Расход, ₽', field: 'iron', sortable: true}
 ]
-// Name
-// Status
-// Actions
-// declarations
-// Impressions
-// Clicks
-// CTR, %
-// Consumption, ₽
 const rows = [
   {
     id: 2000778,
@@ -372,16 +396,36 @@ const rows = [
 ]
 
 import { ref } from 'vue'
+import { useQuasar } from 'quasar'
+import NullDate from "src/components/NullDate.vue";
 
 export default ({
   name: 'compaings',
   setup () {
+    const $q = useQuasar()
+
     return {
+      triggerPositive () {
+        $q.notify({
+          position: 'bottom-right',
+          timeout: 5000,
+          type: 'negative',
+          icon: 'svguse:icons/iconTable.svg#del',
+          message: 'Кампания удалена',
+          caption: 'Кампания и объявления в ней удалены. Показы прекращены'
+        })
+      },
       model: ref(''),
       date: ref({ "from": "01.02.2022", "to": "16.02.2022" }),
       columns,
-      rows
+      rows,
+      current: ref(1),
+      dialog: ref(null),
+      nulldate: false
     }
+  },
+  components: {
+    NullDate
   }
 })
 </script>

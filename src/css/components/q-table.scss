@@ -36,6 +36,18 @@
       }
     }
   }
+  .q-table tbody tr {
+    .q-td-warning {
+      position: relative;
+      &:after {
+        content: '';
+        background: #FFBB0E;
+        width: 3px;
+        height: 100%;
+        display: block;
+      }
+    }
+  }
   .q-table > thead > tr > th {
     .q-table__sort-icon {
       &:last-child {

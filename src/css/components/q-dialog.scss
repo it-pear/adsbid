@@ -16,8 +16,8 @@
   &__close {
     cursor: pointer;
     position: absolute;
-    top: 12px;
-    right: 12px;
+    top: 14px;
+    right: 14px;
     color: #A0A9B7;
     transition: all 0.3s;
 
@@ -25,4 +25,7 @@
       color: #596982;
     }
   }
+}
+.q-dialog__backdrop {
+  background: rgba(18, 40, 76, 0.3);
 }

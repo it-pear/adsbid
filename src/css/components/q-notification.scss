@@ -1,0 +1,42 @@
+.q-notification {
+  max-width: 390px;
+  box-shadow: 0px 16px 48px rgba(0, 0, 0, 0.176);
+  &.bg-negative {
+    background: white !important;
+    padding: 10px 12px 12px 27px;
+    position: relative;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    margin-right: 40px;
+    .q-notification__content {
+      align-items: flex-start;
+    }
+    &:before {
+      content: '';
+      background: $negative;
+      width: 6px;
+      height: 100%;
+      position: absolute;
+      display: block;
+      border-radius: 8px 0 0 8px;
+      left: 0;
+      top: 0;
+    }
+    .q-notification__message {
+      color: $dark;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 130%;
+      margin-top: 2px;
+      .q-notification__caption {
+        margin-top: 8px;
+      }
+    }
+    .q-icon {
+      color: $dark;
+      margin-top: 10px;
+      margin-right: 10px;
+    }
+  }
+ 
+}
