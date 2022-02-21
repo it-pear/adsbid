@@ -70,3 +70,28 @@
     display: none;
   }
 }
+
+
+.q-tabs-main {
+  border-bottom: 1px solid #E4E4E4;
+  .q-tab {
+    padding: 0 12px;
+    min-height: auto;
+    .q-tab__label {
+      color: $grey;
+    }
+    &[aria-selected="true"] {
+      .q-tab__label {
+        color: $dark;
+      }
+    }
+  }
+  .q-tab__content {
+    min-width: auto;
+    padding-top: 1px;
+    padding-bottom: 1px;
+  }
+  .q-tab__indicator {
+    background: $primary;
+  }
+}

@@ -30,10 +30,12 @@ body {
 @import 'components/q-table';
 @import 'components/null-date';
 @import 'components/q-notification';
+@import 'components/q-dropdown';
 
-// pages
+// pages 
 @import 'pages/home';
 @import 'pages/compaings';
+@import 'pages/ads';
 
 .q-menu {
   box-shadow: 0px 0px 24px rgba(18, 40, 76, 0.08);
