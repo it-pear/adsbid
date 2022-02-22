@@ -150,3 +150,43 @@
 .q-field--filled .q-field__control:after {
   display: none;
 }
+
+.filter-wrapper {
+  display: inline-block;
+  padding: 0 29px 0 0;
+
+  &__body {
+    background: #f9f9fa;
+    position: relative;
+    padding: 14px 21px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  &__close {
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    right: -29px;
+    color: #a0a9b7;
+    transition: all 0.3s;
+
+    &:hover {
+      color: #596982;
+    }
+  }
+}
+
+.platform {
+  max-width: 375px;
+  width: 100%;
+}
+
+.choose {
+  max-width: 275px;
+  width: 100%;
+}
