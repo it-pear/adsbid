@@ -1,0 +1,7 @@
+.q-breadcrumbs {
+  color: #2f80ed;
+  font-size: 14px;
+  @media (max-width: 992px) {
+    display: none;
+  }
+}

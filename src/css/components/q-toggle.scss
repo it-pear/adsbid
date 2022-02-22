@@ -1,0 +1,54 @@
+.q-toggle-castom {
+  .q-toggle__track {
+    height: 0.6em;
+    width: 43px;
+    border-radius: 0.275em;
+    opacity: 1;
+    background: none;
+    border: 1px solid #DBDFE4;
+  }
+  .q-toggle__thumb {
+    top: 0.10em;
+    left: 0.08em;
+    width: 0.4em;
+    height: 0.4em;
+    &:before {
+      display: none;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: 50%;
+      background: #DBDFE4;
+      box-shadow: none;
+    }
+  }
+  .q-toggle__inner {
+    width: 43px;
+    min-width: 43px;
+    height: 24px;
+    padding: 0;
+  }
+  .q-toggle__inner--truthy {
+    .q-toggle__track {
+      border: 1px solid currentColor;
+    }
+    .q-toggle__thumb {
+      left: 0.6em;
+      &:after {
+        background: currentColor;
+        box-shadow: none;
+      }
+    }
+  }
+  &:hover {
+    .q-toggle__track {
+      border: 1px solid #4690FF;
+    }
+  }
+
+}

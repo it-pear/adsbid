@@ -31,12 +31,15 @@ body {
 @import 'components/null-date';
 @import 'components/q-notification';
 @import 'components/q-dropdown';
+@import 'components/q-toggle';
+@import 'components/q-breadcrumbs';
 
 // pages 
 @import 'pages/home';
 @import 'pages/compaings';
 @import 'pages/ads';
-
+@import 'pages/selective';
+ 
 .q-menu {
   box-shadow: 0px 0px 24px rgba(18, 40, 76, 0.08);
   border-radius: 4px;

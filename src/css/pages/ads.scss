@@ -33,4 +33,105 @@
       margin-left: auto;
     }
   }
+  .q-table-main {
+    td {
+      vertical-align: top;
+    }
+    .q-table__td-ad {
+      display: flex;
+      flex-direction: column;
+      padding-left: 16px;
+      .q-table__td-ad__title {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        color: $dark;
+        white-space: pre-wrap;
+        max-width: 320px;
+      }
+      .q-chip {
+        max-width: max-content;
+        margin-top: 16px;
+        margin-left: 0;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        color: #273B5B;
+      }
+      .q-table__td-ad__link {
+        color: $primary;
+        text-decoration: none;
+        margin-top: 4px;
+      }
+    }
+    .q-table__td__cpc {
+      .q-icon {
+        margin-right: 12.5px;
+        min-width: 22px;
+      }
+      .q-icon__update {
+        color: rgba(18, 40, 76, 0.2);
+        margin-left: 12px;
+        margin-right: 0;
+        min-width: 14px;
+        opacity: 0;
+        transform: all 0.3s;
+      }
+      .q-item {
+        min-height: auto;
+        height: auto;
+        padding: 6px 8px;
+        border-radius: 4px;
+        width: 106px;
+        &:first-child {
+          .q-icon {
+            margin-right: 10px;
+          }
+        }
+        &:hover {
+          .q-icon__update {
+            color: $primary;
+          }
+        }
+      }
+    }
+    .q-table {
+      thead {
+        tr {
+          th {
+            padding-left: 6px;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 17px;
+            color: #8893A5;
+            padding-top: 0;
+            padding-bottom: 0;
+            &:first-child {
+              padding-left: 2px;
+            }
+          }
+        }
+      }
+      tbody {
+        tr {
+          &:hover {
+            .q-icon__update {
+              opacity: 1;
+            }
+          }
+          .q-td-warning:after {
+            left: -58px;
+          }
+          td {
+            padding-left: 6px;
+            &:first-child {
+              padding-left: 2px;
+            }
+            
+          }
+        }
+      }
+    }
+    
+  }
 }

@@ -1,0 +1,211 @@
+.q-page.selective {
+
+  .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    .q-breadcrumbs,
+    .q-btn {
+      margin-top: 20px;
+    }
+    .q-btn {
+      .q-icon {
+        font-size: 10px;
+        margin-right: 37px;
+      }
+    }
+    .q-input {
+      min-width: 363px;
+      margin-right: 16px;
+    }
+  }
+  .filter {
+    margin-top: 24px;
+    display: flex;
+    .q-select-sec {
+      margin-left: 16px;
+      label {
+        margin-right: 8px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        color: $dark;
+      }
+    }
+    .dropdown-datepicker {
+      margin-left: auto;
+    }
+  }
+
+  // таблица
+  .q-table {
+    tbody,
+    thead {
+      td,
+      th {
+        @media (max-width: 772px) {
+          font-size: 12px;
+        }
+        &:nth-child(1) {
+          padding-left: 8.67px;
+        }
+        &:nth-child(2) {
+          padding-left: 8px;
+        }
+        .q-table__content {
+          font-weight: 500;
+          .q-icon {
+            cursor: pointer;
+            opacity: 0;
+          }
+          .q-table__update {
+            display: flex;
+            align-items: center;
+            transition: all 0.25s;
+            padding: 0 8px;
+            border-radius: 4px;
+            
+            .q-field {
+              border: none;
+              &--focused {
+                border: none !important;
+              }
+            }
+            &:hover {
+              background: #F2F2F2;
+            }
+            .q-field__native {
+              color: #12284C !important;
+            }
+            .q-field--disabled .q-field__control > div {
+              opacity: 1 !important;
+            }
+            .q-input {
+              width: 48px;
+              height: 30px;
+              .q-field__control {
+                height: 30px;
+                &:after {
+                  content: '%';
+                  left: inherit;
+                  top: 6.5px;
+                  right: 4px;
+                  color: #12284C;
+                }
+                @media (max-width: 772px) {
+                  input {
+                    width: 46px;
+                  }
+                  &:after {
+                    content: '%';
+                    top: 5.5px;
+                    right: 4px;
+                  }
+                }
+              }
+              &__noprocent {
+                .q-field__control {
+                  &:after {
+                    content: '';
+                  }
+                }
+              }
+            }
+            .q-icon {
+              color: #A0A9B7;
+              &:hover {
+                color: $primary;
+              }
+            }
+          }
+        }
+        
+        .q-checkbox {
+          &[aria-checked="mixed"] {
+            svg.fit {
+              left: 0;
+              top: 0px;
+              position: absolute;
+            }
+          }
+        }
+        .q-table__content,
+        .q-checkbox {
+          display: flex;
+          height: 100%;
+          align-items: center;
+          .q-checkbox__inner {
+            font-size: 30px;
+          }
+        }
+        .q-table__source {
+          min-width: 655px;
+          @media (max-width: 772px) {
+            min-width: 200px;
+          }
+        }
+      }
+      tr {
+        
+        &:hover > td .q-table__content {
+          .q-icon {
+            opacity: 1;
+          }
+        }
+      }
+      td {
+        padding-top: 12px;
+        padding-bottom: 12px;
+      }
+    }
+  }
+  .sort-desc {
+    .q-table__sort-icon {
+      opacity: none;
+      .q-icon {
+        transform: scale(-1, 1);
+        color: $primary;
+      }
+    }
+  }
+
+
+  // дописанные классы (old)
+  .table-head, .filters-left, .filters-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .filters-right > .q-btn {
+    width: auto;
+  }
+  .filters-right > .q-field {
+    width: 360px;
+    font-size: 14px;
+    margin-right: 16px;
+  }
+  .q-pagination button {
+    border: 1px solid hsl(0, 0%, 95%);
+    border-radius: 4px;
+  }
+  table > tbody > tr > td > button {
+    margin: 0 8px 0 0;
+  }
+  .q-btn--outline:before {
+    border: 1px solid hsl(0, 0%, 95%);
+    border-radius: 4px;
+  }
+  .q-pagination {
+    .q-btn--outline:before {
+      border: 1px solid #4690FF;
+    }
+  }
+  .q-field__control, .q-field__marginal {
+    height: 40px;
+  }
+  .datepicker .q-btn-dropdown__arrow-container {
+    width: 0;
+    height: 0;
+  }
+}
