@@ -21,8 +21,12 @@
     }
   }
   .filter {
-    margin-top: 24px;
     display: flex;
+    flex-wrap: wrap;
+    .q-btn,
+    .q-select-sec {
+      margin-top: 24px;
+    }
     .q-select-sec {
       margin-left: 16px;
       label {
@@ -82,10 +86,16 @@
               opacity: 1 !important;
             }
             .q-input {
-              width: 48px;
+              width: 44px;
               height: 30px;
+              min-height: 30px;
+              padding: 0;
               .q-field__control {
-                height: 30px;
+                min-height: 30px !important;
+                padding-left: 0;
+                input {
+                  padding: 0 !important;
+                }
                 &:after {
                   content: '%';
                   left: inherit;
@@ -147,19 +157,21 @@
         }
       }
       tr {
-        
         &:hover > td .q-table__content {
           .q-icon {
             opacity: 1;
           }
         }
       }
+      
       td {
         padding-top: 12px;
         padding-bottom: 12px;
       }
     }
+    
   }
+  
   .sort-desc {
     .q-table__sort-icon {
       opacity: none;
@@ -169,43 +181,7 @@
       }
     }
   }
-
-
-  // дописанные классы (old)
-  .table-head, .filters-left, .filters-right {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .filters-right > .q-btn {
-    width: auto;
-  }
-  .filters-right > .q-field {
-    width: 360px;
-    font-size: 14px;
-    margin-right: 16px;
-  }
-  .q-pagination button {
-    border: 1px solid hsl(0, 0%, 95%);
-    border-radius: 4px;
-  }
-  table > tbody > tr > td > button {
-    margin: 0 8px 0 0;
-  }
-  .q-btn--outline:before {
-    border: 1px solid hsl(0, 0%, 95%);
-    border-radius: 4px;
-  }
   .q-pagination {
-    .q-btn--outline:before {
-      border: 1px solid #4690FF;
-    }
-  }
-  .q-field__control, .q-field__marginal {
-    height: 40px;
-  }
-  .datepicker .q-btn-dropdown__arrow-container {
-    width: 0;
-    height: 0;
+    margin-top: 24px;
   }
 }

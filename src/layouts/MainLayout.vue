@@ -104,6 +104,7 @@
       show-if-above
       elevated
       class="q-drawer-main"
+      breakpoint="772"
     >
       <q-list class="q-drawer-main-links">
         <q-item-label header>

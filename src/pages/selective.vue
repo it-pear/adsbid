@@ -16,34 +16,92 @@
       />
     </div>
 
-    <div class="filters">
-
-        <q-btn-dropdown
-          outline
-          icon="svguse:icons/allIcons.svg#setting"
-          class="dropdown-option"
+    <div class="filter">
+      <q-btn-dropdown
+        outline
+        icon="svguse:icons/allIcons.svg#setting"
+        class="dropdown-option"
+        dropdown-icon="keyboard_arrow_down"
+        label="Действия"
+        no-caps
+      >
+        <q-list>
+          <q-item clickable v-close-popup>
+            Включить
+          </q-item>
+          <q-item clickable v-close-popup>
+            Выключить
+          </q-item>
+        </q-list>
+      </q-btn-dropdown>
+      <div class="row q-select-sec items-center">
+        <label>Кампания:</label>
+        <q-select
+          v-model="single"
+          :options="options"
           dropdown-icon="keyboard_arrow_down"
-          label="Действия"
-          no-caps
-        >
-          <q-list>
-            <q-item clickable v-close-popup>
-              Включить
+          label="Placeholder"
+        />
+      </div>
+      <q-btn-dropdown
+        outline
+        icon="svguse:icons/allIcons.svg#calendar"
+        class="dropdown-datepicker"
+        :label="date.from ? `${date.from} - ${date.to}` : date"
+        no-caps
+      >
+        <q-card class="row datepicker">
+          <q-list dense bordered padding class="rounded-borders">
+            <q-item>
+              <q-item-section>Сегодня</q-item-section>
             </q-item>
-            <q-item clickable v-close-popup>
-              Выключить
+
+            <q-item>
+              <q-item-section>Вчера</q-item-section>
+            </q-item>
+
+            <q-item>
+              <q-item-section>Позавчера</q-item-section>
+            </q-item>
+
+            <q-item class="q-item--active">
+              <q-item-section>Текущая неделя</q-item-section>
+            </q-item>
+
+            <q-item>
+              <q-item-section>Прошлая неделя</q-item-section>
+            </q-item>
+
+            <q-item>
+              <q-item-section>Текущий месяц</q-item-section>
+            </q-item>
+
+            <q-item>
+              <q-item-section>Прошлый месяц</q-item-section>
+            </q-item>
+
+            <q-item>
+              <q-item-section>- 7 дней</q-item-section>
+            </q-item>
+
+            <q-item>
+              <q-item-section>- 30 дней</q-item-section>
+            </q-item>
+
+            <q-item>
+              <q-item-section>- 90 дней</q-item-section>
             </q-item>
           </q-list>
-        </q-btn-dropdown>
-        <div class="row q-select-sec items-center">
-          <label>Кампания:</label>
-          <q-select
-            v-model="single"
-            :options="options"
-            dropdown-icon="keyboard_arrow_down"
-            label="Placeholder"
-          />
-        </div>
+
+          <q-date
+            v-model="date"
+            minimal
+            range
+            mask="DD.MM.YYYY"
+          >
+          </q-date>
+        </q-card>
+      </q-btn-dropdown>
     </div>
 
     <q-table
@@ -53,7 +111,6 @@
       :binary-state-sort="true"
       :rows="selectives"
       :columns="headers"
-      v-model:pagination="pagination"
       v-model:selected="selected"
       class="q-table-main"
     >
@@ -97,6 +154,7 @@
         <q-td :props="props">
           <div class="q-table__content">
             <div class="q-table__update">
+              
               <q-tooltip anchor="top middle" self="bottom middle" class="top-tooltip">
                 Изменить коэфициент
               </q-tooltip>
@@ -106,14 +164,14 @@
                 min="1"
                 max="1000"
                 type="text"
-                v-model.number="coeff"
-                :disable="false"
+                v-model.number="props.row.coeff"
+                :disable="props.row.coeffUp"
                 :class="{ 'q-input__noprocent': !props.row.coeffUp }" 
               />
               
-              <q-icon v-show="props.row.coeffUp" size="18px" name="edit" />
-              <q-icon v-show="!props.row.coeffUp" size="18px" name="done" color="green" />
-              <q-icon v-show="!props.row.coeffUp" size="18px" name="clear" color="red" />
+              <q-icon v-show="props.row.coeffUp" size="18px" name="edit" @click="props.row.coeffUp = false" />
+              <q-icon v-show="!props.row.coeffUp" size="18px" name="done" color="green" @click="props.row.coeffUp = true" />
+              <q-icon v-show="!props.row.coeffUp" size="18px" name="clear" color="red" @click="props.row.coeffUp = true" />
             </div>
           </div>
         </q-td>
@@ -131,6 +189,11 @@
         </q-td>
       </template>
     </q-table>
+    <q-pagination
+      v-model="current"
+      :max="5"
+      direction-links
+    />
   </q-page>
   
 </template>
@@ -163,8 +226,8 @@ const selectives = [
     usedBalance: '973 777',
     cpc: '1.4',
     coeff: 100,
-    coeffUp: false,
-    isActive: false,
+    coeffUp: true,
+    isActive: true,
   },
   {
     id: 972777,
@@ -176,22 +239,22 @@ const selectives = [
     isActive: false,
   },
   {
-    id: 973777,
+    id: 97377,
     clicks: '15 203 402',
     usedBalance: '973 777',
     cpc: '1.4',
     coeff: 100,
-    coeffUp: false,
+    coeffUp: true,
     isActive: false,
   },
   {
-    id: 973777,
+    id: 97327,
     clicks: '15 203 402',
     usedBalance: '973 777',
     cpc: '1.4',
     coeff: 100,
     coeffUp: false,
-    isActive: false,
+    isActive: true,
   },
 ]
 export default {  
@@ -200,9 +263,17 @@ export default {
       selectives,
       headers,
       coeff: ref('ss'),
-      coeffUp: ref(false),
+      coeffUp: ref(true),
       fillDefault: null,
-      selected: ref([])
+      current: ref(1),
+      selected: ref([]),
+      single: ref('id 131 / ads cуставы пенсионерка 83 года кзjk'),
+      date: ref({ "from": "01.02.2022", "to": "16.02.2022" }),
+      options: [
+        "компания 2 сердства для выносливости",
+        "компания 3 пенсионерка мне 83 суставы",
+        "Twitter"
+      ],
     }
   },
     
