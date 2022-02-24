@@ -24,7 +24,8 @@
     display: flex;
     flex-wrap: wrap;
     .q-btn,
-    .q-select-sec {
+    .q-select-sec,
+    .q-input-search {
       margin-top: 24px;
     }
     .q-select-sec {
@@ -37,8 +38,12 @@
         color: $dark;
       }
     }
-    .dropdown-datepicker {
+    .q-input-search {
       margin-left: auto;
+      max-width: 241px;
+    }
+    .dropdown-datepicker {
+      margin-left: 16px;
     }
   }
 

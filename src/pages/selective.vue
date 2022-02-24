@@ -43,6 +43,19 @@
           label="Placeholder"
         />
       </div>
+
+      <q-input
+        outlined
+        v-model="model"
+        :dense="dense"
+        :options-dense="denseOpts"
+        class="q-input-search"
+        placeholder="Поиск по ID площадки"
+      >
+        <template v-slot:prepend>
+          <q-icon size="20px" name="svguse:icons/allIcons.svg#search" />
+        </template>
+      </q-input>
       <q-btn-dropdown
         outline
         icon="svguse:icons/allIcons.svg#calendar"

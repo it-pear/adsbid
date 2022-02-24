@@ -10,6 +10,7 @@ const routes = [
       { path: '/compaings', component: () => import('pages/compaings.vue') },
       { path: '/ads', component: () => import('pages/ads.vue') },
       { path: '/selective', component: () => import('pages/selective.vue') },
+      { path: '/createad', component: () => import('pages/createAd.vue') },
     ]
   },
 

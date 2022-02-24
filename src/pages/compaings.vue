@@ -1,34 +1,34 @@
 <template>
-  <q-dialog v-model="dialog" class="compaings-dialog-del">
-    <q-card>
-      <div class="row">
-        <div class="q-dialog__title">
-          Вы уверены, что хотите удалить кампанию?
-        </div>
-        <q-icon
-          class="q-dialog__close"
-          size="18px"
-          name="svguse:icons/allIcons.svg#close"
-          flat
-          v-close-popup
-        />
-      </div>
-
-      <div class="row">
-        <q-space />
-        <q-btn label="Отмена" no-caps flat color="dm-grey" v-close-popup />
-        <q-btn
-          class="q-btn__bold"
-          label="Удалить"
-          no-caps
-          unelevated
-          color="primary"
-         @click="triggerPositive('top-right')"
-        />
-      </div>
-    </q-card>
-  </q-dialog>
   <q-page class="compaings pt-0">
+    <q-dialog v-model="dialog" class="compaings-dialog-del">
+      <q-card>
+        <div class="row">
+          <div class="q-dialog__title">
+            Вы уверены, что хотите удалить кампанию?
+          </div>
+          <q-icon
+            class="q-dialog__close"
+            size="18px"
+            name="svguse:icons/allIcons.svg#close"
+            flat
+            v-close-popup
+          />
+        </div>
+
+        <div class="row">
+          <q-space />
+          <q-btn label="Отмена" no-caps flat color="dm-grey" v-close-popup />
+          <q-btn
+            class="q-btn__bold"
+            label="Удалить"
+            no-caps
+            unelevated
+            color="primary"
+            @click="triggerPositive('top-right')"
+          />
+        </div>
+      </q-card>
+    </q-dialog>
     <!-- icon="mail" q-btn-dropdown__arrow -->
     <div class="head">
       <q-btn-dropdown
@@ -96,13 +96,14 @@
           v-model="model"
           :dense="dense"
           :options-dense="denseOpts"
+          class="q-input-search"
           placeholder="Поиск по ID или названию объявления"
         >
           <template v-slot:prepend>
             <q-icon size="20px" name="svguse:icons/allIcons.svg#search" />
           </template>
         </q-input>
-        <q-btn color="primary" no-caps unelevated icon="add" label="Создать кампанию" />
+        <q-btn color="primary" to="/createad" no-caps unelevated icon="add" label="Создать кампанию" />
       </div>
     </div>
     <null-date

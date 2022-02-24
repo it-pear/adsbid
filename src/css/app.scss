@@ -33,12 +33,14 @@ body {
 @import 'components/q-dropdown';
 @import 'components/q-toggle';
 @import 'components/q-breadcrumbs';
+@import 'components/q-tooltip';
 
 // pages 
 @import 'pages/home';
 @import 'pages/compaings';
 @import 'pages/ads';
 @import 'pages/selective';
+@import 'pages/createad'; 
  
 .q-menu {
   box-shadow: 0px 0px 24px rgba(18, 40, 76, 0.08);
@@ -57,4 +59,7 @@ body {
 }
 .q-field__control:after {
   border: none !important;
+}
+.underilne {
+  text-decoration: underline;
 }

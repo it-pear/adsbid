@@ -8,6 +8,7 @@
           v-model="model"
           :dense="dense"
           :options-dense="denseOpts"
+          class="q-input-search"
           placeholder="Поиск по ID или названию объявления"
         >
           <template v-slot:prepend>
