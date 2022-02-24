@@ -36,7 +36,6 @@
 
   &__marginal {
     height: 38px;
-    background: #ffffff;
     z-index: 1;
   }
 
@@ -68,7 +67,10 @@
   &--focused {
     border: 1px solid #4690ff !important;
   }
-  
+
+  &__input {
+    min-height: 0;
+  }
 }
 
 .q-item {

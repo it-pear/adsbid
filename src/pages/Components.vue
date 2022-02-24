@@ -62,70 +62,61 @@
       </q-card>
     </q-dialog>
 
-    <q-input filled v-model="date">
-      <template v-slot:prepend>
-        <q-icon
-          size="16px"
-          name="svguse:icons/allIcons.svg#calendar"
-          class="cursor-pointer"
-        >
-          <q-popup-proxy cover transition-show="scale" transition-hide="scale">
-            <q-card class="row datepicker">
-              <q-list dense bordered padding class="rounded-borders">
-                <q-item>
-                  <q-item-section>Сегодня</q-item-section>
-                </q-item>
+    <q-btn-dropdown
+      outline
+      icon="svguse:icons/allIcons.svg#calendar"
+      class="dropdown-datepicker"
+      :label="date.from ? `${date.from} - ${date.to}` : date"
+      no-caps
+    >
+      <q-card class="row datepicker">
+        <q-list dense bordered padding class="rounded-borders">
+          <q-item>
+            <q-item-section>Сегодня</q-item-section>
+          </q-item>
 
-                <q-item>
-                  <q-item-section>Вчера</q-item-section>
-                </q-item>
+          <q-item>
+            <q-item-section>Вчера</q-item-section>
+          </q-item>
 
-                <q-item>
-                  <q-item-section>Позавчера</q-item-section>
-                </q-item>
+          <q-item>
+            <q-item-section>Позавчера</q-item-section>
+          </q-item>
 
-                <q-item class="q-item--active">
-                  <q-item-section>Текущая неделя</q-item-section>
-                </q-item>
+          <q-item class="q-item--active">
+            <q-item-section>Текущая неделя</q-item-section>
+          </q-item>
 
-                <q-item>
-                  <q-item-section>Прошлая неделя</q-item-section>
-                </q-item>
+          <q-item>
+            <q-item-section>Прошлая неделя</q-item-section>
+          </q-item>
 
-                <q-item>
-                  <q-item-section>Текущий месяц</q-item-section>
-                </q-item>
+          <q-item>
+            <q-item-section>Текущий месяц</q-item-section>
+          </q-item>
 
-                <q-item>
-                  <q-item-section>Прошлый месяц</q-item-section>
-                </q-item>
+          <q-item>
+            <q-item-section>Прошлый месяц</q-item-section>
+          </q-item>
 
-                <q-item>
-                  <q-item-section>- 7 дней</q-item-section>
-                </q-item>
+          <q-item>
+            <q-item-section>- 7 дней</q-item-section>
+          </q-item>
 
-                <q-item>
-                  <q-item-section>- 30 дней</q-item-section>
-                </q-item>
+          <q-item>
+            <q-item-section>- 30 дней</q-item-section>
+          </q-item>
 
-                <q-item>
-                  <q-item-section>- 90 дней</q-item-section>
-                </q-item>
-              </q-list>
+          <q-item>
+            <q-item-section>- 90 дней</q-item-section>
+          </q-item>
+        </q-list>
 
-              <q-date
-                v-model="date"
-                minimal
-                range
-                mask="DD.MM.YYYY - DD.MM.YYYY"
-              >
-              </q-date>
-            </q-card>
-          </q-popup-proxy>
-        </q-icon>
-      </template>
-    </q-input>
+        <q-date v-model="date" minimal range mask="DD.MM.YYYY"> </q-date>
+      </q-card>
+    </q-btn-dropdown>
 
+    <br />
     <br />
 
     <q-checkbox class="checkbox" v-model="val" label="Дата" dense />
@@ -137,6 +128,125 @@
       <q-tab class="tab" name="mails" label="Mails" />
       <q-tab class="tab" name="alarms" label="Alarms" />
     </q-tabs>
+
+    <br />
+    <br />
+
+    <div class="filter-wrapper">
+      <div class="filter-wrapper__body">
+        <div class="filter-wrapper__title q-mb-sm">Выберите период</div>
+        <q-btn-dropdown
+          outline
+          icon="svguse:icons/allIcons.svg#calendar"
+          class="dropdown-datepicker"
+          :label="date.from ? `${date.from} - ${date.to}` : date"
+          no-caps
+        >
+          <q-card class="row datepicker">
+            <q-list dense bordered padding class="rounded-borders">
+              <q-item>
+                <q-item-section>Сегодня</q-item-section>
+              </q-item>
+
+              <q-item>
+                <q-item-section>Вчера</q-item-section>
+              </q-item>
+
+              <q-item>
+                <q-item-section>Позавчера</q-item-section>
+              </q-item>
+
+              <q-item class="q-item--active">
+                <q-item-section>Текущая неделя</q-item-section>
+              </q-item>
+
+              <q-item>
+                <q-item-section>Прошлая неделя</q-item-section>
+              </q-item>
+
+              <q-item>
+                <q-item-section>Текущий месяц</q-item-section>
+              </q-item>
+
+              <q-item>
+                <q-item-section>Прошлый месяц</q-item-section>
+              </q-item>
+
+              <q-item>
+                <q-item-section>- 7 дней</q-item-section>
+              </q-item>
+
+              <q-item>
+                <q-item-section>- 30 дней</q-item-section>
+              </q-item>
+
+              <q-item>
+                <q-item-section>- 90 дней</q-item-section>
+              </q-item>
+            </q-list>
+
+            <q-date v-model="date" minimal range mask="DD.MM.YYYY"> </q-date>
+          </q-card>
+        </q-btn-dropdown>
+      </div>
+    </div>
+
+    <br />
+    <br />
+
+    <div class="filter-wrapper platform">
+      <div class="filter-wrapper__body">
+        <div class="row items-center justify-between">
+          <div class="filter-wrapper__title q-mb-md q-mr-md">Платформа</div>
+          <q-checkbox
+            class="checkbox q-mb-md"
+            v-model="val"
+            label="Ввести вручную"
+            dense
+          />
+        </div>
+
+        <q-select
+          use-input
+          v-model="single"
+          :options="options"
+          dropdown-icon="keyboard_arrow_down"
+          label="Выберите или введите значение"
+        />
+
+        <q-icon
+          class="filter-wrapper__close"
+          size="16px"
+          name="svguse:icons/allIcons.svg#close"
+          flat
+          v-close-popup
+        />
+      </div>
+    </div>
+
+    <br />
+    <br />
+
+    <div class="filter-wrapper choose">
+      <div class="filter-wrapper__body">
+        <div class="filter-wrapper__title q-mb-sm">Выберите фильтр</div>
+
+        <q-select
+          v-model="single"
+          :options="options"
+          dropdown-icon="keyboard_arrow_down"
+          label="Выберите значение"
+        />
+
+        <q-icon
+          class="filter-wrapper__close"
+          size="16px"
+          name="svguse:icons/allIcons.svg#close"
+          flat
+          v-close-popup
+        />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -173,7 +283,7 @@ export default {
       ],
       dialog: ref(null),
       val: ref(true),
-      tab: ref('mails')
+      tab: ref("mails"),
     };
   },
 };
