@@ -1,0 +1,187 @@
+$pdleft: 20px;
+.q-page.createad {
+  padding-left: 20px;
+  padding-right: 20px;
+  .createad-tabs {
+    margin-top: 40px;
+    padding-left: $pdleft;
+    .q-tabs__content {
+      justify-content: flex-start;
+    }
+    .q-tab {
+      padding-left: 0;
+      padding-right: 0;
+      .q-tab__content {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+      &:first-child {
+        margin-right: 32px;
+      }
+      .q-tab__number,
+      .q-tab__label {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        transition: all 0.3s;
+      }
+      .q-tab__number {
+        width: 24px;
+        height: 24px;
+        background: #A0A9B7;
+        border-radius: 4px;
+        color: white;
+        line-height: 24px;
+        margin: auto;
+      }
+      .q-tab__label {
+        color: #A0A9B7;
+        margin-top: 4px;
+        text-transform: capitalize;
+      }
+      &[aria-selected="true"] {
+        .q-tab__number {
+          background: $primary;
+        }
+        .q-tab__label {
+          color: $dark;
+        }
+      }
+      .q-tab__indicator {
+        display: none;
+      }
+      .q-focus-helper,
+      .q-ripple {
+        display: none;
+      }
+    }
+  }
+  .q-tab-panel {
+    max-width: 1353px;
+    padding: 0;
+    padding-left: $pdleft;
+    padding-right: $pdleft;
+    padding-bottom: 20px;
+  }
+  .createad-sec {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    section {
+      background: #FFFFFF;
+      box-shadow: 0px 0px 24px rgba(18, 40, 76, 0.08);
+      border-radius: 8px;
+      margin-top: 40px;
+      padding: 32px;
+      .text-subtitle1 {
+        font-weight: bold;
+        color: $dark;
+      }
+      label {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: $dark;
+        display: flex;
+        align-items: top;
+        .q-icon {
+          margin-left: 8px;
+        }
+      }
+      &.content {
+        flex: 1 1 100%;
+        margin-right: 40px;
+        .text-subtitle1 {
+          padding-bottom: 6px;
+        }
+        .q-list {
+          .q-item {
+            padding: 0;
+            margin-top: 24px;
+            flex-direction: column;
+            .q-item__title {
+              margin-bottom: 8px;
+            }
+            .q-field {
+              width: 100%;
+            }
+            .hint {
+              letter-spacing: 0.03em;
+              color: #8893A5;
+              margin-top: 8px;
+            }
+          }
+          .q-item-limit {
+            border-top: 1px solid #DBDFE4;
+            padding-top: 24px;
+            .q-checkbox__label {
+              padding-left: 16px;
+            }
+            .q-input {
+              max-width: 240px;
+              margin-top: 8px;
+            }
+          }
+          .tabs {
+            margin-left: 8px;
+          }
+        }
+        .sec-btns {
+          margin-top: 43px;
+          display: flex;
+          justify-content: flex-end;
+          .q-btn {
+            padding-left: 22.5px;
+            padding-right: 22.5px;
+            &.bg-primary {
+              font-weight: 700;
+              margin-left: 19px;
+            }
+          }
+        }
+      }
+      &.sidebar {
+        flex: 0 0 493px;
+        max-width: 493px;
+        .text-subtitle1 {
+          padding-bottom: 13px;
+        }
+        .progressive-bar {
+          .title {
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 29px;
+            color: $dark;
+            margin-top: 12px;
+          }
+          .bar {
+            width: 100%;
+            display: block;
+            height: 8px;
+            background: #F3F5F9;
+            border-radius: 4px;
+            position: relative;
+            margin-top: 6px;
+            .bar-length {
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 13%;
+              height: 100%;
+              border-radius: 4px;
+              background: linear-gradient(75.87deg, #8639C5 -34.13%, #9955BF 1.18%, #6B6ACE 35.28%, #5979DC 59.73%, #4F86EF 86.77%, #488DFB 108.64%, #4690FF 131.21%);
+            }
+          }
+        }
+        .sidebar__text {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 140%;
+          color: $grey-2;
+          margin-top: 16px;
+        }
+      }
+    }
+  }
+  
+}
