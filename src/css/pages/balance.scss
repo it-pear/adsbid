@@ -1,0 +1,60 @@
+.q-page.balance {
+  .balance-card {
+    max-width: 220px;
+    width: 100%;
+    border: 1px solid #E3EEFF;
+    box-shadow: none;
+    border-radius: 4px;
+    background-color: #fafcff;
+    display: flex;
+    flex-direction: column;
+    min-height: 140px;
+    .card-head {
+      padding: 17px 5px 18px 17px;
+      .q-icon {
+        margin-right: 17px;
+      }
+      .card-head__title {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 0.03em;
+        color: $dark;
+      }
+      .card-head__current {
+        margin-top: 25px;
+      }
+    }
+    .balance-card__hint {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 18px;
+      letter-spacing: 0.03em;
+      margin-top: 8px;
+      color: $grey;
+    }
+    .card-head__current {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 18px;
+      letter-spacing: 0.03em;
+      color: $dark;
+    }
+    .q-btn-replenish {
+      border-radius: 0 0 4px 4px;
+      width: 100%;
+      font-weight: 700;
+    }
+    .card-bottom {
+      margin-top: auto;
+      padding-left: 16px;
+      padding-bottom: 16px;
+    }
+  }
+  .status {
+    .balance-card {
+      margin-right: 20px;  
+    }
+  }
+// status
+}
