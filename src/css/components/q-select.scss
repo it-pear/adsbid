@@ -6,7 +6,7 @@
   transition: all 0.3s;
 
   &:hover {
-    border: 1px solid #000000;
+    border: 1px solid $dark;
   }
 
   &__control {
@@ -72,6 +72,50 @@
     min-height: 0;
   }
 }
+
+.q-select--multiple {
+  height: auto !important;
+  .q-field__control-container {
+    align-items: flex-start;
+  }
+  .q-field__native {
+    padding: 0 !important;
+    padding-bottom: 0 !important;
+    padding-top: 4px !important;
+  } 
+  .q-chip {
+    margin-top: 0;
+    margin-bottom: 4px;
+    border-radius: 4px;
+    height: 100%;
+    background: #F0F2F6;
+    min-height: 32px;
+  }
+}
+
+.q-select-add {
+  border: none;
+  &:hover {
+    border: none;
+  }
+  &.q-field--focused {
+    border: none !important;
+  }
+  .q-field__control {
+    border: 1px solid #E0E0E0;
+    border-radius: 4px;
+    height: 40px !important;
+    overflow: hidden;
+    transition: all 0.3s;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    &:hover {
+      border: 1px solid $dark;
+    }
+  }
+  
+}
+
 
 .q-item {
   min-height: 0;

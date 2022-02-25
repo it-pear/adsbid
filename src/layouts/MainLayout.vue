@@ -148,7 +148,7 @@ const linksList = [
   {
     title: 'Статистика',
     icon: 'statistic',
-    link: '/statistics'
+    link: '/statistic'
   },
   {
     title: 'Кампании',

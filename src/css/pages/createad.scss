@@ -122,12 +122,50 @@ $pdleft: 20px;
               margin-top: 8px;
             }
           }
+          
+          .q-item-devices {
+            .q-checkbox {
+              &:first-child {
+                margin-right: 25px;
+              }
+            }
+          }
+
+          .q-item-traffics {
+            .q-item-traffics__label {
+              position: relative;
+              left: -10px;
+              .q-radio {
+                margin-right: 20px;
+              }
+            }
+            .traffics-row {
+              align-items: center;
+              margin-left: 8px;
+              .q-field {
+                max-width: 108px;
+              }
+              .traffics-row-hr {
+                width: 14px;
+                height: 1px;
+                display: block;
+                border-radius: 5px;
+                background: $dark;
+                margin: 0 8px;
+              }
+              
+            }            
+          }
           .tabs {
             margin-left: 8px;
           }
         }
+        .btn-add-dropdown-time {
+          margin-top: 16px;
+          width: 100%;
+        }
         .sec-btns {
-          margin-top: 43px;
+          margin-top: 40px;
           display: flex;
           justify-content: flex-end;
           .q-btn {
@@ -182,6 +220,15 @@ $pdleft: 20px;
         }
       }
     }
+  } 
+}
+
+.q-select-ad-traffic {
+  .disabled {
+    padding-top: 0;
+    .q-item__section {
+      padding-top: 12px;
+      border-top: 1px solid #E1E1E1;
+    }
   }
-  
 }

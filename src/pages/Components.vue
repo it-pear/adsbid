@@ -194,6 +194,23 @@
     <br />
     <br />
 
+    
+    <q-btn-dropdown
+      outline
+      class="dropdown-time"
+      :label="date"
+      no-caps
+    >
+      <q-card class="row datetime">
+        <q-time v-model="date" format24h mask="HH:mm" color="primary" />
+      </q-card>
+    </q-btn-dropdown>
+    
+
+    <br />
+    <br />
+
+
     <div class="filter-wrapper platform">
       <div class="filter-wrapper__body">
         <div class="row items-center justify-between">
