@@ -12,6 +12,7 @@ const routes = [
       { path: '/selective', component: () => import('pages/selective.vue') },
       { path: '/createad', component: () => import('pages/createAd.vue') },
       { path: '/statistic', component: () => import('pages/statistic.vue') },
+      { path: '/balance', component: () => import('pages/balance.vue') },
     ]
   },
 

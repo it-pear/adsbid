@@ -214,7 +214,7 @@ export default ({
     const filter = ref('')
     const filterRef = ref(null)
     return {
-      tab: ref('2'),
+      tab: ref('1'),
       tabs: ref("mails"),
       val: ref(false),
       val2: ref(false),

@@ -163,7 +163,7 @@ const linksList = [
   {
     title: 'Баланс',
     icon: 'balance',
-    link: ''
+    link: '/balance'
   },
   {
     title: 'FAQ',
