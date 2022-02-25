@@ -1,0 +1,56 @@
+.q-page.statistic {
+  .text-subtitle2 {
+    color: $grey;
+    margin-bottom: 14px;
+  }
+  .statistic__reset {
+    color: $primary;
+    margin-bottom: 14px;
+    cursor: pointer;
+  }
+  .head,
+  .filter {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    & > .row {
+      width: 100%;
+    }
+  }
+  .head {
+    .q-field {
+      width: max-content;
+      margin-right: 24px;
+      .q-icon {
+        cursor: pointer;
+      }
+    }
+  }
+  .filter {
+    margin-top: 24px;
+    .filter-wrapper.platform,
+    .filter-wrapper.choose {
+      margin-right: 24px;
+    }
+  }
+  .control {
+    .q-btn {
+      padding: 4px 33.5px;
+      font-weight: 700;
+      margin-top: 24px;
+    }
+    .q-btn__download {
+      margin-left: 10px;
+    }
+  }
+  .q-table {
+    .top-tr {
+      .q-table__td {
+        font-weight: 700;
+      }
+    }
+  }
+  .q-pagination {
+    margin-top: 24px;
+  }
+}
